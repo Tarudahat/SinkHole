@@ -1,0 +1,108 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://assets/thumbnails/thumbnail_0.png" type="Texture" id=2]
+[ext_resource path="res://menus/special_buttons/arrow_buttons.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/GUI/menu_panel.png" type="Texture" id=4]
+[ext_resource path="res://menus/title_menu.gd" type="Script" id=5]
+[ext_resource path="res://menus/special_buttons/button_cancel.tscn" type="PackedScene" id=7]
+[ext_resource path="res://menus/special_buttons/button_score_board.tscn" type="PackedScene" id=8]
+[ext_resource path="res://assets/font/EightBitDragon-anqx.ttf" type="DynamicFontData" id=9]
+[ext_resource path="res://menus/new_dynamicfont.tres" type="DynamicFont" id=10]
+
+[sub_resource type="DynamicFont" id=1]
+size = 60
+font_data = ExtResource( 9 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 72
+font_data = ExtResource( 9 )
+
+[sub_resource type="StyleBoxEmpty" id=2]
+
+[sub_resource type="StyleBoxEmpty" id=3]
+
+[node name="title_menu" type="Node2D"]
+script = ExtResource( 5 )
+
+[node name="background" type="TextureRect" parent="."]
+margin_right = 1280.0
+margin_bottom = 771.0
+texture = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="level_select_label" type="Label" parent="background"]
+margin_left = 432.0
+margin_top = -8.0
+margin_right = 864.0
+margin_bottom = 120.0
+custom_fonts/font = SubResource( 1 )
+text = "Level select"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="thumbnail" type="TextureRect" parent="background"]
+margin_left = 384.0
+margin_top = 198.112
+margin_right = 1664.0
+margin_bottom = 966.112
+rect_scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 2 )
+stretch_mode = 5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="level_name" type="Label" parent="background"]
+margin_left = 8.0
+margin_top = 640.0
+margin_right = 1286.0
+margin_bottom = 716.0
+custom_fonts/font = SubResource( 4 )
+text = "Plains"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="button_ok" type="Button" parent="background"]
+margin_left = 1024.0
+margin_top = 640.0
+margin_right = 1144.0
+margin_bottom = 720.0
+mouse_default_cursor_shape = 2
+custom_styles/hover = SubResource( 2 )
+custom_styles/focus = SubResource( 3 )
+custom_fonts/font = ExtResource( 10 )
+text = "Ok"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="shadow" type="Label" parent="background/button_ok"]
+show_behind_parent = true
+margin_left = 30.25
+margin_top = 20.25
+margin_right = 152.25
+margin_bottom = 109.25
+custom_fonts/font = ExtResource( 10 )
+custom_colors/font_color = Color( 0.309804, 0.309804, 0.309804, 1 )
+text = "Ok"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="arrow_buttons" parent="background" instance=ExtResource( 3 )]
+
+[node name="button_cancel" parent="." instance=ExtResource( 7 )]
+
+[node name="Control" parent="." instance=ExtResource( 8 )]
+margin_left = 48.0
+margin_top = 16.0
+margin_right = 112.0
+margin_bottom = 88.0
+stretch_mode = 5

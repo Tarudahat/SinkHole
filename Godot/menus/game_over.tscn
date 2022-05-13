@@ -1,0 +1,71 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://menus/new_dynamicfont.tres" type="DynamicFont" id=1]
+[ext_resource path="res://menus/game_over.gd" type="Script" id=2]
+[ext_resource path="res://assets/GUI/game_over.png" type="Texture" id=4]
+[ext_resource path="res://assets/font/EightBitDragon-anqx.ttf" type="DynamicFontData" id=5]
+
+[sub_resource type="DynamicFont" id=1]
+size = 75
+font_data = ExtResource( 5 )
+
+[node name="game_over" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="panel" type="TextureRect" parent="."]
+anchor_right = 0.131
+margin_right = 1280.0
+margin_bottom = 768.0
+texture = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="game_over_label" type="Label" parent="panel"]
+margin_left = 368.0
+margin_top = 64.0
+margin_right = 821.0
+margin_bottom = 156.0
+rect_scale = Vector2( 1.2, 1.2 )
+custom_fonts/font = SubResource( 1 )
+text = "Game Over"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="score" type="Label" parent="panel"]
+margin_left = 296.0
+margin_top = 328.0
+margin_right = 736.0
+margin_bottom = 420.0
+custom_fonts/font = ExtResource( 1 )
+text = "Score: 42069"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="total_score" type="Label" parent="panel"]
+margin_left = 296.0
+margin_top = 448.0
+margin_right = 671.0
+margin_bottom = 551.0
+rect_scale = Vector2( 0.8, 0.8 )
+custom_fonts/font = ExtResource( 1 )
+text = "Total Score: "
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HI" type="Label" parent="panel"]
+margin_left = 296.0
+margin_top = 544.0
+margin_right = 636.0
+margin_bottom = 647.0
+rect_scale = Vector2( 0.8, 0.8 )
+custom_fonts/font = ExtResource( 1 )
+text = "High Score: "
+__meta__ = {
+"_edit_use_anchors_": false
+}
